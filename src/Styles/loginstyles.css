@@ -1,0 +1,59 @@
+/* googleLoginStyles.css */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: lightblue;
+}
+
+.containerx {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Ensure items stretch vertically to match height */
+
+  border-radius: 10px;
+  height: 90vh;
+  width:100vh;
+}
+
+.left-panel, .right-panel {
+  flex: 1; /* Equal width for both panels */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px; /* Adjust padding as needed */
+  
+}
+
+.right-panel {
+  background-color: lightgoldenrodyellow; /* Different background color */
+}
+
+.google-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #DB4437; /* Google Red */
+  color: white;
+  cursor: pointer;
+}
+
+.google-icon {
+  width: 40px; /* Adjust as needed */
+  height: 30px; /* Adjust as needed */
+  margin-right: 10px;
+  border-radius: 200px;
+}
+
+.img-fluid {
+  max-width: 100%; /* Ensure the image fits within its container */
+  height: 100%; /* Maintain aspect ratio */
+
+
+}
