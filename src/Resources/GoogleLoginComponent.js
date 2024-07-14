@@ -5,7 +5,7 @@ import img from './gicon.png';
 const GoogleLoginComponent = () => {
 
   const handleLoginClick = () => {
-    window.location.href = 'https://moviex-server-63mctzjlgq-el.a.run.app/login';
+    window.location.href = 'https://moviez.azurewebsites.net//login';
   };
 
   return (

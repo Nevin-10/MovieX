@@ -15,7 +15,7 @@ function Home() {
   const [generatedText, setGeneratedText] = useState('');
   const [loading, setLoading] = useState(false);
   const [accessToken, setAccessToken] = useState('');
-  const [loginSuccess, setLoginSuccess] = useState(true);
+  const [loginSuccess, setLoginSuccess] = useState(false);
 
   useEffect(() => {
     // Function to extract code from URL
@@ -27,7 +27,7 @@ function Home() {
 
     const fetchAccessToken = async (code) => {
       try {
-        const response = await fetch('https://moviex-server-63mctzjlgq-el.a.run.app/main', {
+        const response = await fetch('https://moviez.azurewebsites.net/main', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -111,7 +111,7 @@ function Home() {
   
     try {
       const textData = JSON.stringify(formData);
-      const response = await fetch('http://localhost:8000/test', {
+      const response = await fetch('https://moviez.azurewebsites.net/test', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -132,7 +132,12 @@ function Home() {
 
   const handleBackButtonClick = () => {
     if (step > 1) {
+
+      if (step === 3) {
+        setShowCards(true);
+      }
       setStep(step - 1);
+      
     }
   };
 
@@ -159,14 +164,14 @@ function Home() {
 
   return (
     <div>
-      {loginSuccess && (
+      {step>=3 && (
   <div className="back-button" onClick={handleBackButtonClick}>
     <button>&lt; Back</button>
   </div>
 )}
 
 
-      {step >= 2 && !loginSuccess && (
+      {step >= 2 && (
         <>
           {showCards ? (
             <div className='parentx'>
@@ -181,6 +186,9 @@ function Home() {
                 </div>
                 <div className="card" onClick={() => handleTypeClick('Movies')}>
                   <h2>Movies</h2>
+                </div>
+                <div className="card" onClick={() => handleTypeClick('Anime')}>
+                  <h2>Anime</h2>
                 </div>
               </div>
             </div>
